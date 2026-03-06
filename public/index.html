@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>API Rate Limiter Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>API Rate Limiting Dashboard</h1>
+
+<div class="controls">
+
+<select id="algorithm">
+
+<option value="token">Token Bucket</option>
+<option value="fixed">Fixed Window</option>
+<option value="sliding">Sliding Window</option>
+<option value="leaky">Leaky Bucket</option>
+
+</select>
+
+<button onclick="sendRequest()">Send Request</button>
+
+<button onclick="startLoad()">Start Load Test</button>
+
+<button onclick="resetStats()">Reset</button>
+
+</div>
+
+<div class="stats">
+
+<div class="card">
+<h2 id="allowed">0</h2>
+<p>Allowed Requests</p>
+</div>
+
+<div class="card blocked">
+<h2 id="blocked">0</h2>
+<p>Blocked Requests</p>
+</div>
+
+</div>
+
+<div class="chart-container">
+
+<canvas id="requestChart"></canvas>
+
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Shabber Shaik Corporation. All Rights Reserved.
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
